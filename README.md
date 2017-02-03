@@ -10,6 +10,7 @@ Debe utilizar:
 Deseable:
 
 - Bootstrap UI
+- BEM
 
 Las fuentes utilizadas en la pieza gráfica son Roboto y Arial para las tablas.
 
