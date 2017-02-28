@@ -1,3 +1,20 @@
+body {
+  font-size: 14px;
+  color: #666668;
+}
+
+h1 {
+  font: 28px "Roboto Condensed";
+}
+
+h2 {
+  font: 20px "Roboto";
+}
+
+h3 {
+  font: 18px "Roboto";
+}
+
 .ul-dashed {
     list-style: square inside url('data:image/gif;base64,R0lGODlhBQAKAIABAAAAAP///yH5BAEAAAEALAAAAAAFAAoAAAIIjI+ZwKwPUQEAOw==');
 }
@@ -7,9 +24,9 @@
 }
 
 .well-table > tbody > tr > td:first-child:before {
-    content: '\2022 ';
+    content: '\2022 \00a0';
 }
 
 .well-table > tbody > tr > td:last-child:before {
-    content: '-';
+    content: '- \00a0';
 }
