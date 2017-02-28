@@ -30,3 +30,8 @@ h3 {
 .well-table > tbody > tr > td:last-child:before {
     content: '- \00a0';
 }
+
+.navbar {
+  background-color: #002464;
+  padding-bottom: 8px;
+}
