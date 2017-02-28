@@ -27,8 +27,27 @@ angular.module('Collapsible', [])
 angular.module('bch.test', modules)
 
 
-.controller('AppCtrl', function ($scope) {
-  $scope.appTitle = 'Bch Test';
+.config(function($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+    .state('init', {
+      url: '/',
+      templateUrl: 'template/home.html'
+    });
+})
+
+.run(function ($rootScope,   $state,   $stateParams) {
+
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+})
+
+.controller('AppCtrl', function ($scope, $state) {
+    $scope.$on('$stateChangeSuccess', function (event) {
+        $scope.appTitle = 'Bch Test';
+    });
 })
 
 ;
