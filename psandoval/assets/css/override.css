@@ -1,0 +1,15 @@
+.ul-dashed {
+    list-style: square inside url('data:image/gif;base64,R0lGODlhBQAKAIABAAAAAP///yH5BAEAAAEALAAAAAAFAAoAAAIIjI+ZwKwPUQEAOw==');
+}
+
+.well-table {
+    width: 100%;
+}
+
+.well-table > tbody > tr > td:first-child:before {
+    content: '\2022 ';
+}
+
+.well-table > tbody > tr > td:last-child:before {
+    content: '-';
+}
