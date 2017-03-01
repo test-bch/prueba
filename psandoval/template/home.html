@@ -53,20 +53,20 @@
               <div class="form-group">
                 <div class="col-md-3">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="{{::vm.defaultPlaceholder}}">
-                    <span class="input-group-addon">calendar</span>
+                    <input type="text" class="form-control  cursor-hand" placeholder="{{::vm.defaultPlaceholder}}">
+                    <span class="input-group-addon"><img src="assets/image/glyph-calendar.png" class="cursor-hand" height="16"></span>
                   </div>
                 </div>
                 <br class="hidden-md hidden-lg">
                 <div class="col-md-3">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="{{::vm.defaultPlaceholder}}">
-                    <span class="input-group-addon">calendar</span>
+                    <input type="text" class="form-control cursor-hand" placeholder="{{::vm.defaultPlaceholder}}">
+                    <span class="input-group-addon"><img src="assets/image/glyph-calendar.png" class="cursor-hand" height="16"></span>
                   </div>
                 </div>
                 <br class="hidden-md hidden-lg">
                 <div class="col-md-3">
-                  <select  ng-model="vm.fs.select1" class="form-control">
+                  <select  ng-model="vm.fs.select1" class="form-control  cursor-hand">
                   <option selected value="">{{::vm.defaultPlaceholder}}</option>
                   <option ng-repeat="opt in vm.fs.select1Opts"
                       value="{{opt.val}}">x{{opt.desc}}</option>
