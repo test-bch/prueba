@@ -45,6 +45,9 @@ angular.module('inputTable', [])
 
     var self = this;
 
+
+    self.defaultPlaceholder = "Seleccione...";
+
     self.fs = {};
     self.fs.select1Opts = [{"val": 1, "desc": "Opción 1"}];
     self.fs.general_search = '';
