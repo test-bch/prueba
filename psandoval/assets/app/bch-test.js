@@ -38,6 +38,20 @@ angular.module('panels', modules)
    }
 });
 
+modules.push('bannerList');
+angular.module('bannerList', [])
+.controller('bannerListCtrl', function ($scope, $http, $filter) {
+
+    var self = this;
+    self.list = [];
+
+    $http.get('resource/list.json')
+    .then(function(res){
+      self.list = res.data;
+    });
+
+
+});
 
 modules.push('inputTable');
 angular.module('inputTable', [])
