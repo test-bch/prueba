@@ -1,4 +1,4 @@
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
           <h2>Título</h2>
@@ -8,9 +8,9 @@
             </div>
             <div class="panel-body highlight">
               <div class="section">
-                <div class="container">
+                <div class="container-fluid">
                   <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-xs-11">
                       <h4>Lopem ipsum</h4>
                       <ul class="ul-dashed">
                         <li>One</li>
@@ -18,7 +18,7 @@
                         <li>Three</li>
                       </ul>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 col-xs-11">
                       <div class="well well-lg">
                         <table class="well-table">
                           <colgroup>
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="container" ng-controller="inputTableCtrl as vm">
+    <div class="container-fluid" ng-controller="inputTableCtrl as vm">
       <div class="row">
         <div class="col-md-12">
           <div class="panel panel-default" ng-controller="CollapsibleCtrl as svm">
@@ -53,7 +53,7 @@
                 class="btn btn-default btn-xs pull-right" >{{svm.collapLabel}}</button>
               <div class="clearfix"></div>
             </div>
-            <div class="panel-body" uib-collapse="svm.isCollapsed" >
+            <div class="panel-body bg-primary-darker" uib-collapse="svm.isCollapsed" >
             <form class="form-horizontal" name="fs" ng-submit="vm.search()">
 
               <div class="form-group">
