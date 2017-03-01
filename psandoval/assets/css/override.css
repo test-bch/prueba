@@ -60,3 +60,25 @@ h3 {
 .navbar-nav>li>a {
     padding-top: 4px !important;
 }
+
+.panel-body.highlight  {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+}
+
+.panel-body.highlight .well  {
+  background-color: #ffffff;
+  border: 1px solid #e3e3e3;
+}
+
+table thead > tr {
+  background-color: #f5f5f5;
+}
+
+.well {
+  border-radius: 3px;
+}
+
+.panel {
+  border-radius: 0px;
+}
