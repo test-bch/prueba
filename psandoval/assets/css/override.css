@@ -56,3 +56,7 @@ h3 {
 .navbar-default .navbar-nav>li>a:visited  {
     color: #ffffff;
 }
+
+.navbar-nav>li>a {
+    padding-top: 4px !important;
+}
