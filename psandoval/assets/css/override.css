@@ -31,12 +31,24 @@ h3 {
   width: 100%;
 }
 
-.well-table > tbody > tr > td:first-child:before {
-  content: '\2022 \00a0';
+
+@media (min-width: 993px) {
+
+  .well-table > tbody > tr > td:first-child:before {
+    content: '\2022 \00a0';
+  }
+
+  .well-table > tbody > tr > td:last-child:before {
+    content: '- \00a0';
+  }
 }
 
-.well-table > tbody > tr > td:last-child:before {
-  content: '- \00a0';
+@media (max-width: 992px) {
+
+  .well-table > tbody > tr > td:last-child {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .navbar {
@@ -96,6 +108,10 @@ table thead > tr {
   background-color: #f6f6f8;
 }
 
+#inputs-table td, #inputs-table th {
+  color: #000009;
+}
+
 .well {
   padding-left: 4px;
   padding-right: 4px;
@@ -131,4 +147,8 @@ table thead > tr {
     padding-top: 10px;
     padding-bottom: 10px;
   }
+}
+
+#banner .banner-list {
+  padding-left: 12px;
 }

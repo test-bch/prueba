@@ -1,4 +1,4 @@
-    <div class="container-fluid">
+    <div class="container-fluid" id="banner">
       <div class="row">
         <div class="col-md-12">
           <h2>Título</h2>
@@ -10,21 +10,15 @@
               <div class="section">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col-md-3 col-xs-11">
+                    <div class="col-md-3 col-xs-12">
                       <h4>Lopem ipsum</h4>
-                      <ul class="ul-dashed">
-                        <li>One</li>
-                        <li>Two</li>
-                        <li>Three</li>
+                      <ul class="ul-dashed banner-list" ng-controller="bannerListCtrl as vm">
+                        <li ng-repeat="li in vm.list">{{li.desc}}</li>
                       </ul>
                     </div>
-                    <div class="col-md-8 col-xs-11">
+                    <div class="col-md-8 col-xs-12">
                       <div class="well well-lg">
                         <table class="well-table">
-                          <colgroup>
-                            <col>
-                            <col width="100">
-                          </colgroup>
                           <tbody>
                             <tr>
                               <td>Lorem ipsum</td>
@@ -98,7 +92,7 @@
 
       <div class="row">
         <div class="col-xs-12">
-          <div class="table-responsive">
+          <div id="inputs-table" class="table-responsive">
           <table class="table">
             <thead>
               <tr>
