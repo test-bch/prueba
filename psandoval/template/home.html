@@ -7,7 +7,7 @@
               <h3 class="panel-title">Título caja</h3>
             </div>
             <div class="panel-body">
-              <div class="section">
+              <div class="section highlight">
                 <div class="container">
                   <div class="row">
                     <div class="col-md-3">
@@ -43,20 +43,53 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" ng-controller="inputTableCtrl as vm">
       <div class="row">
         <div class="col-md-12">
-          <div class="panel panel-default">
+          <div class="panel panel-default" ng-controller="CollapsibleCtrl as svm">
             <div class="panel-heading">
-              <h6 class="panel-title pull-left">Total Items: {{::total}}</h6>
-              <button class="btn btn-default btn-xs pull-right" ng-click="isCollapsed = !isCollapsed" >Abrir</button>
+              <h6 class="panel-title pull-left">Total Items: {{vm.totalItemsFiltered}}</h6>
+              <button ng-click="svm.collapseToggle()"
+                class="btn btn-default btn-xs pull-right" >{{svm.collapLabel}}</button>
               <div class="clearfix"></div>
             </div>
-            <div class="panel-body"  uib-collapse="isCollapsed" >
-              <div class="input-group">
-                <input type="text" class="form-control">
-                <span class="input-group-addon">calendar</span>
+            <div class="panel-body" uib-collapse="svm.isCollapsed" >
+            <form class="form-horizontal" name="fs" ng-submit="vm.search()">
+
+              <div class="form-group">
+                <div class="col-md-3">
+                  <div class="input-group">
+                    <input type="text" class="form-control">
+                    <span class="input-group-addon">calendar</span>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <div class="input-group">
+                    <input type="text" class="form-control">
+                    <span class="input-group-addon">calendar</span>
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <select  ng-model="vm.fs.select1" class="form-control">
+                  <option selected>Seleccione...</option>
+                  <option ng-repeat="opt in vm.fs.select1Opts"
+                      value="{{opt.val}}">x{{opt.desc}}</option>
+                  </select>
+                </div>
               </div>
+
+              <div class="form-group">
+                <div class="col-md-6">
+                    <input type="text" class="form-control input-large" placeholder="Búsqueda general"
+                    ng-model="vm.fs.general_search" >
+                </div>
+                 <div class="col-md-offset-4 col-md-2 text-center">
+                  <button  ng-click="vm.search()"  class="btn btn-success">Buscar</button>
+                </div>
+              </div>
+            </form>
             </div>
           </div>
         </div>
@@ -79,41 +112,24 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                <tr ng-repeat="item in vm.pagedItems">
+                  <td><input type="checkbox"></td>
+                  <td>{{item.lorem}}</td>
+                  <td>{{item.ipsum}}</td>
+                  <td>{{item.dolor}}</td>
+                  <td>{{item.sit}}</td>
+                  <td>$ {{item.amet}}</td>
                 </tr>
               </tbody>
             </table>
             <div class="row">
-              <div class="col-xs-9 col-xs-offset-3 col-md-offset-5">
-                <ul class="pagination">
-                  <li>
-                    <a href="#">&laquo;</a>
-                  </li>
-                  <li class="active">
-                    <a href="#">1</a>
-                  </li>
-                  <li>
-                    <a href="#">2</a>
-                  </li>
-                  <li>
-                    <a href="#">3</a>
-                  </li>
-                  <li>
-                    <a href="#">4</a>
-                  </li>
-                  <li>
-                    <a href="#">5</a>
-                  </li>
-                  <li>
-                    <a href="#">&raquo;</a>
-                  </li>
-                </ul>
+              <div class="col-xs-12 text-center">
+              <ul uib-pagination  class="pagination-sm"
+                  ng-model="vm.currentPage" max-size="vm.maxSize" total-items="vm.totalItemsFiltered"
+                  boundary-links="true" force-ellipses="true" direction-links="false"
+                  ng-change="vm.pageChanged()"
+                  previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+
               </div>
             </div>
           </div>
