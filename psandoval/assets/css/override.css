@@ -31,6 +31,10 @@ h3 {
   width: 100%;
 }
 
+.well-table td {
+  padding-bottom: 8px;
+}
+
 
 @media (min-width: 993px) {
 

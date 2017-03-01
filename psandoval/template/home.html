@@ -18,11 +18,11 @@
                     </div>
                     <div class="col-md-8 col-xs-12">
                       <div class="well well-lg">
-                        <table class="well-table">
+                        <table class="well-table" ng-controller="bannerResumeCtrl as vm">
                           <tbody>
-                            <tr>
-                              <td>Lorem ipsum</td>
-                              <td>200.000</td>
+                            <tr ng-repeat="list in vm.list">
+                              <td>{{list.desc}}</td>
+                              <td>{{list.amount}}</td>
                             </tr>
                           </tbody>
                         </table>

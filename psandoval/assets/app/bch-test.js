@@ -40,7 +40,7 @@ angular.module('panels', modules)
 
 modules.push('bannerList');
 angular.module('bannerList', [])
-.controller('bannerListCtrl', function ($scope, $http, $filter) {
+.controller('bannerListCtrl', function ($scope, $http) {
 
     var self = this;
     self.list = [];
@@ -51,7 +51,20 @@ angular.module('bannerList', [])
     });
 
 
-});
+})
+
+.controller('bannerResumeCtrl', function ($scope, $http) {
+
+    var self = this;
+    self.list = [];
+
+    $http.get('resource/resume.json')
+    .then(function(res){
+      self.list = res.data;
+    });
+
+
+});;
 
 modules.push('inputTable');
 angular.module('inputTable', [])
