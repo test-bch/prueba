@@ -156,3 +156,8 @@ table thead > tr {
 #banner .banner-list {
   padding-left: 12px;
 }
+
+
+.cursor-hand {
+  cursor: pointer;
+}
